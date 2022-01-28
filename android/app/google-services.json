@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "969542145809",
+    "project_id": "niceonelife-22432",
+    "storage_bucket": "niceonelife-22432.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969542145809:android:a27edc79a9fc7afd9adeb0",
+        "android_client_info": {
+          "package_name": "com.newOneLife.new_one_life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969542145809-rk5mrts873cjhboopgrfcbre2n9husu5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.newOneLife.new_one_life",
+            "certificate_hash": "d9cc98ea15d9b86fca3af930404648f054542fed"
+          }
+        },
+        {
+          "client_id": "969542145809-sulukrk1frb6j3ac5ha36se5m7nrjclg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKftIFBVacP3A_fVx7dseI4qZwSXxogoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969542145809-sulukrk1frb6j3ac5ha36se5m7nrjclg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
