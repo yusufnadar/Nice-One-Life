@@ -1,13 +1,22 @@
 import 'dart:io';
+<<<<<<< HEAD
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
+=======
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:new_one_life/controllers/bindings/all_binding.dart';
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 import 'package:new_one_life/default/behavior.dart';
 import 'package:new_one_life/default/initialize/notification_initialize.dart';
 import 'package:new_one_life/default/theme.dart';
 import 'package:new_one_life/ui/home/home_page.dart';
+<<<<<<< HEAD
 import 'package:url_launcher/url_launcher.dart';
 
 void main() async {
@@ -36,13 +45,32 @@ class MyHttpOverrides extends HttpOverrides {
     return super.createHttpClient(context)
       ..badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;
+=======
+import 'package:new_one_life/ui/splash_pages/landing_page.dart';
+
+void main() async {
+  await Initialize.initializing();
+  initializeDateFormatting('tr');
+  HttpOverrides.global = MyHttpOverrides();
+  runApp(MyApp());
+}
+
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
   }
 }
 
 class MyApp extends StatelessWidget {
+<<<<<<< HEAD
   var deeplink;
 
   MyApp({Key? key, this.deeplink});
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -50,6 +78,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) =>
           ScrollConfiguration(behavior: MyBehavior(), child: child!),
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
       //initialBinding: AllBindings(),
       theme: ThemeDatas.themeData(),
       locale: Get.deviceLocale,
@@ -58,10 +87,20 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/home_page', page: () => HomePage()),
         //GetPage(name: '/', page: () => LandingPage())
+=======
+      initialBinding: AllBindings(),
+      theme: ThemeDatas.themeData(),
+      locale: Get.deviceLocale,
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/home_page', page: () => HomePage()),
+        GetPage(name: '/', page: () => LandingPage())
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       ],
     );
   }
 }
+<<<<<<< HEAD
 
 class TestPage extends StatefulWidget {
   const TestPage({Key? key}) : super(key: key);
@@ -235,3 +274,5 @@ class _TestPageState extends State<TestPage> {
   }
 }
 
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721

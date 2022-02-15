@@ -36,7 +36,11 @@ class FillAddress extends GetWidget<FillAddressController> {
   final basketType;
   final items;
 
+<<<<<<< HEAD
   FillAddress({Key? key,this.price,this.basketType,this.items}) : super(key: key);
+=======
+  FillAddress({Key? key,this.price,this.basketType,this.items});
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   @override
   Widget build(BuildContext context) {
@@ -362,7 +366,11 @@ class FillAddress extends GetWidget<FillAddressController> {
       margin: EdgeInsets.only(left: Get.width * 0.06, top: Get.height * 0.03),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+<<<<<<< HEAD
         children: const [
+=======
+        children: [
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
           Text('KDV: '),
           Text(
             '19.08 TL',
@@ -378,7 +386,11 @@ class FillAddress extends GetWidget<FillAddressController> {
       margin: EdgeInsets.only(left: Get.width * 0.06, top: Get.height * 0.03),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+<<<<<<< HEAD
         children: const [
+=======
+        children: [
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
           Text('Kargo Ücreti: '),
           Text(
             '15.45 TL',
@@ -439,7 +451,11 @@ class FillAddress extends GetWidget<FillAddressController> {
                   color: mainColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
+<<<<<<< HEAD
                 child: const Text(
+=======
+                child: Text(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                   'Ödemeye Geç',
                   style: TextStyle(
                       color: Colors.white,

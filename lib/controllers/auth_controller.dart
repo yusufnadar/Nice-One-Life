@@ -4,7 +4,10 @@ import 'package:get/get.dart';
 import 'package:new_one_life/controllers/user_controller.dart';
 import 'package:new_one_life/models/user.dart';
 import 'package:new_one_life/services/auth_service.dart';
+<<<<<<< HEAD
 import 'package:new_one_life/ui/home/home_page.dart';
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
 class AuthController extends GetxController {
   FirebaseAuth _auth = FirebaseAuth.instance;

@@ -22,7 +22,11 @@ class ProductDetail extends StatelessWidget {
       f.controller!.getProductDetail(productId);
     },builder: (_){
       if(_.product.id == null){
+<<<<<<< HEAD
         return const Scaffold(body: Center(child: CircularProgressIndicator(),),);
+=======
+        return Scaffold(body: Center(child: CircularProgressIndicator(),),);
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       }else{
         return Scaffold(
           appBar: PreferredSize(
@@ -45,7 +49,10 @@ class ProductDetail extends StatelessWidget {
                         child: CachedNetworkImage(
                           imageUrl: _.product.photo!,
                           width: Get.width,
+<<<<<<< HEAD
                           height: Get.height*0.3,
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                         )),
                     sizedBox2,
                     Text(

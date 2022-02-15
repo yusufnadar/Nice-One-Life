@@ -143,6 +143,7 @@ class DataService{
 
   Future<List<String>> getMyPackages() async{
     var liste = <String>[];
+<<<<<<< HEAD
     var snapshot = await _firestore.collection('myPackages').doc(userId).collection('myPackages').get();
     for(var item in snapshot.docs){
       liste.add(item.data()['id']);
@@ -159,6 +160,11 @@ class DataService{
     }
     for(var item in snapshot1.docs){
       liste.add(PackageModel.fromJson(item.data()));
+=======
+    var snapshot = await _firestore.collection('users').doc(userId).get();
+    for(String item in snapshot.data()!['packages']){
+      liste.add(item);
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
     }
     return liste;
   }

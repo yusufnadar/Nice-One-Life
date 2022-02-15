@@ -11,7 +11,11 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx((){
       if(Get.find<AuthController>().isLoading == true){
+<<<<<<< HEAD
         return const LoadingScreenScaffold();
+=======
+        return LoadingScreenScaffold();
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       }else{
         if (Get.find<UserController>().user.id != null) {
           return HomePage();

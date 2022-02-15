@@ -67,7 +67,10 @@ class FirebaseNotifications {
         };
         AwesomeNotifications().createNotification(
             content: NotificationContent(
+<<<<<<< HEAD
 
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
               id: 1,
               channelKey: 'basic_channel',
               title: message.notification!.title,

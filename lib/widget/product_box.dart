@@ -20,7 +20,11 @@ class ProductBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: Get.height * 0.02),
+<<<<<<< HEAD
       padding: const EdgeInsets.all(16),
+=======
+      padding: EdgeInsets.all(16),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(7),
           border: Border.all(

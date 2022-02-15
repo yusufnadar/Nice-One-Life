@@ -44,7 +44,11 @@ class AddAddress extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: Get.height * 0.1),
                   child: ListView.builder(
+<<<<<<< HEAD
                     physics: const NeverScrollableScrollPhysics(),
+=======
+                    physics: NeverScrollableScrollPhysics(),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                     padding: EdgeInsets.symmetric(horizontal: Get.width * 0.07),
                     shrinkWrap: true,
                     itemCount: liste.length,

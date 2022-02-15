@@ -1,5 +1,8 @@
 // ignore_for_file: must_be_immutable
+<<<<<<< HEAD
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -25,7 +28,11 @@ class HomePageController extends GetxController {
 }
 
 class HomePage extends GetWidget<HomePageController> {
+<<<<<<< HEAD
   final RefreshController _refreshController = RefreshController(initialRefresh: false);
+=======
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +66,17 @@ class HomePage extends GetWidget<HomePageController> {
                 controller: _refreshController,
                 onRefresh: _onRefresh,
                 onLoading: _onLoading,
+<<<<<<< HEAD
                 footer: const ClassicFooter(
                     noMoreIcon: Icon(Icons.add),
                     loadStyle: LoadStyle.ShowWhenLoading),
                 header: const ClassicHeader(
+=======
+                footer: ClassicFooter(
+                    noMoreIcon: Icon(Icons.add),
+                    loadStyle: LoadStyle.ShowWhenLoading),
+                header: ClassicHeader(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                   refreshStyle: RefreshStyle.UnFollow,
                   completeText: 'Güncellendi',
                   refreshingText: 'Güncelleniyor',
@@ -82,7 +96,11 @@ class HomePage extends GetWidget<HomePageController> {
                 ),
               );
             } else {
+<<<<<<< HEAD
               return const Center(
+=======
+              return Center(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                 child: Text('Henüz Post Paylaşılmamış'),
               );
             }
@@ -92,7 +110,10 @@ class HomePage extends GetWidget<HomePageController> {
     );
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
   Container floatingActionButton() {
     return Container(
       margin:

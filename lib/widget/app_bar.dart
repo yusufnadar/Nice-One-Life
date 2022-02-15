@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
 import 'package:new_one_life/default/colors.dart';
@@ -6,6 +12,7 @@ import 'package:new_one_life/ui/drawer_pages/address/address.dart';
 import 'package:new_one_life/ui/drawer_pages/profile/profile.dart';
 
 class MyAppBar extends StatelessWidget {
+<<<<<<< HEAD
   final String? title;
   final bool? isHomePage;
   final bool? isAddress;
@@ -14,6 +21,16 @@ class MyAppBar extends StatelessWidget {
 
   KeyboardVisibilityController keyboardVisibilityController =
       KeyboardVisibilityController();
+=======
+  final title;
+  final bool? isHomePage;
+  final bool? isAddress;
+
+  MyAppBar({Key? key, this.title, this.isHomePage,this.isAddress});
+
+
+  var keyboardVisibilityController = KeyboardVisibilityController();
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +38,7 @@ class MyAppBar extends StatelessWidget {
       margin: EdgeInsets.only(top: Get.height * 0.03, left: Get.width * 0.06),
       child: AppBar(
         actions: [
+<<<<<<< HEAD
           if (isHomePage == true)
             Padding(
               padding: const EdgeInsets.only(right: 15),
@@ -41,6 +59,27 @@ class MyAppBar extends StatelessWidget {
         centerTitle: true,
         title: Text(
           title!,
+=======
+          isHomePage == true
+              ? Padding(
+                  padding: EdgeInsets.only(right: 15),
+                  child: IconButton(
+                    onPressed: () async {
+                     Get.to(()=>Profile());
+                    },
+                    icon: Icon(
+                      Icons.person,
+                      color: mainColor,
+                      size: 34,
+                    ),
+                  ),
+                )
+              : Container()
+        ],
+        centerTitle: true,
+        title: Text(
+          title,
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
           style: TextStyle(
             color: appbarTitleColor,
             fontWeight: FontWeight.w600,
@@ -54,11 +93,19 @@ class MyAppBar extends StatelessWidget {
               if (isHomePage == true) {
                 Scaffold.of(context).openDrawer();
               } else {
+<<<<<<< HEAD
                 Get.back<dynamic>();
               }
             },
             child: Container(
               margin: const EdgeInsets.all(4),
+=======
+                Get.back();
+              }
+            },
+            child: Container(
+              margin: EdgeInsets.all(4),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(width: 1, color: mainColor)),
@@ -70,6 +117,7 @@ class MyAppBar extends StatelessWidget {
             ),
           ),
         ),
+<<<<<<< HEAD
         bottom: isAddress == true
             ? TabBar(
                 labelColor: Colors.red,
@@ -93,6 +141,17 @@ class MyAppBar extends StatelessWidget {
                 ],
               )
             : null,
+=======
+        bottom: isAddress == true ? TabBar(
+          labelColor: Colors.red,
+          indicatorColor: mainColor,
+          controller: Get.find<AddressController>().tabController,
+          tabs: [
+            Tab(child: Text('Teslimat Adreslerim',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),),
+            Tab(child: Text('Fatura Adreslerim',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),),
+          ],
+        ) : null,
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       ),
     );
   }

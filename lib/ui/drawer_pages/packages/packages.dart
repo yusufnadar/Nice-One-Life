@@ -24,7 +24,11 @@ class Packages extends StatelessWidget {
       },builder: (_)=>GridView.builder(
         padding: EdgeInsets.symmetric(horizontal: Get.width * 0.04),
         itemCount: _.packages!.length,
+<<<<<<< HEAD
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+=======
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
             crossAxisCount: 2, mainAxisSpacing: 20, childAspectRatio: 0.85),
         itemBuilder: (context, index) => onePackage(index,_.packages![index]),
       )),
@@ -32,6 +36,18 @@ class Packages extends StatelessWidget {
   }
 
   onePackage(int index, PackageModel package) {
+<<<<<<< HEAD
+=======
+    var liste = ['Diyet', 'Zayıflatma', 'Kas', 'Güç', 'Fit', 'Kilo Alma'];
+    var listePhoto = [
+      'assets/diyet.png',
+      'assets/zayiflatma.png',
+      'assets/kas.png',
+      'assets/guc.png',
+      'assets/fit.png',
+      'assets/kilo.png'
+    ];
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
     return GestureDetector(
       onTap: () => Get.to(() => PackageDetail(package: package,)),
       child: Container(

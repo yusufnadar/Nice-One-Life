@@ -3,7 +3,10 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:new_one_life/controllers/auth_controller.dart';
+<<<<<<< HEAD
 import 'package:new_one_life/default/behavior.dart';
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 import 'package:new_one_life/models/address.dart';
 import 'package:new_one_life/models/message.dart';
 import 'package:new_one_life/models/package.dart';
@@ -11,11 +14,15 @@ import 'package:new_one_life/models/product.dart';
 import 'package:new_one_life/models/user.dart';
 import 'package:new_one_life/services/storage_service.dart';
 import 'package:new_one_life/services/user_service.dart';
+<<<<<<< HEAD
 import 'package:new_one_life/ui/drawer_pages/profile/profile.dart';
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 import 'package:new_one_life/ui/home/home_page.dart';
 import 'package:uuid/uuid.dart';
 
 class UserController extends GetxController {
+<<<<<<< HEAD
   final Rx<UserModel?> _userModel = UserModel().obs;
   UserModel get user => _userModel.value!;
   set user(UserModel? value) => _userModel.value = value;
@@ -25,19 +32,39 @@ class UserController extends GetxController {
   set setPackageBasket(List<PackageModel> packages) => _packageBasket.value = packages;
 
   final RxList<AddressModel> _billAddress = <AddressModel>[].obs;
+=======
+  Rx<UserModel?> _userModel = UserModel().obs;
+  UserModel get user => _userModel.value!;
+  set user(UserModel? value) => this._userModel.value = value;
+
+  RxList<PackageModel> _packageBasket = <PackageModel>[].obs;
+  List<PackageModel> get packageBasket => _packageBasket.value;
+  set setPackageBasket(List<PackageModel> packages) => _packageBasket.value = packages;
+
+  RxList<AddressModel> _billAddress = <AddressModel>[].obs;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
   List<AddressModel> get billAddress => _billAddress.value;
    get billAddress2 => _billAddress;
   set setBillAddress(List<AddressModel> billAddress) => _billAddress.value = billAddress;
 
+<<<<<<< HEAD
   final RxList<AddressModel> _deliveryAddress = <AddressModel>[].obs;
   List<AddressModel> get deliveryAddress => _deliveryAddress.value;
   set setDeliveryAddress(List<AddressModel> deliveryAddress) => _deliveryAddress.value = deliveryAddress;
 
   final RxList<ProductModel> _productBasket = <ProductModel>[].obs;
+=======
+  RxList<AddressModel> _deliveryAddress = <AddressModel>[].obs;
+  List<AddressModel> get deliveryAddress => _deliveryAddress.value;
+  set setDeliveryAddress(List<AddressModel> deliveryAddress) => _deliveryAddress.value = deliveryAddress;
+
+  RxList<ProductModel> _productBasket = <ProductModel>[].obs;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
   List<ProductModel> get productBasket => _productBasket.value;
   get productBasket2 => _productBasket;
   set setProductBasket(List<ProductModel> product) => _productBasket.value = product;
 
+<<<<<<< HEAD
   RxBool isLoading = false.obs;
 
 
@@ -50,6 +77,21 @@ class UserController extends GetxController {
   final Rx<UserModel?> _otherUser = UserModel().obs;
   UserModel get otherUser => _otherUser.value!;
   set otherUser(UserModel? value) => _otherUser.value = value;
+=======
+  var sayi = 5.obs;
+  var liste = [1,2,3].obs;
+
+
+  UserService? _userService = UserService();
+  StorageService? _storageService = StorageService();
+
+  var _messages = <MessageModel>[].obs;
+  var _chats = <ChatModel>[].obs;
+
+  Rx<UserModel?> _otherUser = UserModel().obs;
+  UserModel get otherUser => _otherUser.value!;
+  set otherUser(UserModel? value) => this._otherUser.value = value;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
 
   List<MessageModel>? get messages => _messages.value;
@@ -113,6 +155,7 @@ class UserController extends GetxController {
 
   Future updateProfile(String name, String phone, File? cv) async{
     try{
+<<<<<<< HEAD
       String fileID = const Uuid().v4();
       if (cv != null) {
         var cvUrl = await _storageService!.uploadCv(cv, fileID);
@@ -125,6 +168,14 @@ class UserController extends GetxController {
         user = await _userService!.currentUser(userId);
         isLoading.value = false;
         Get.back(result: true);
+=======
+      String fileID = Uuid().v4();
+      if (cv != null) {
+        var cvUrl = await _storageService!.uploadCv(cv, fileID);
+        return await _userService!.updateProfile(name, phone, cvUrl, fileID);
+      } else {
+        return await _userService!.updateProfile(name, phone, null, fileID);
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       }
     }catch(e){
       Get.snackbar('Hata', e.toString());
@@ -254,6 +305,7 @@ class UserController extends GetxController {
     }
   }
 
+<<<<<<< HEAD
   Future finishPay2(liste) async{
     try{
       return _userService!.finishPay2(liste);
@@ -265,4 +317,6 @@ class UserController extends GetxController {
 
   void getOrders() {}
 
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 }

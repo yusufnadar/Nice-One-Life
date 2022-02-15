@@ -78,7 +78,11 @@ class ProductBasket extends StatelessWidget {
                 text: 'Ödemeye Geç',
                 onTap: () {
                   if(basketPrice != 0){
+<<<<<<< HEAD
                     Get.to(() => FillAddress(basketType: 'product',price: basketPrice,items:Get.find<UserController>().productBasket,));
+=======
+                    Get.to(() => FillAddress(basketType: 'product',price: basketPrice,));
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                   }else{
                     Get.snackbar('Uyarı', 'Sepetiniz Boş');
                   }

@@ -219,8 +219,13 @@ class UserService {
     if (type == 'package') {
       var here = await FirebaseFirestore.instance
           .collection('packageBasket')
+<<<<<<< HEAD
           .doc(userId)
           .collection('packageBasket')
+=======
+      .doc(Get.find<UserController>().user.id)
+      .collection('packageBasket')
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
           .doc(id)
           .get();
       if (here.data() == null) {
@@ -268,11 +273,17 @@ class UserService {
 
   Future<List<PackageModel>> getPackageBasket() async {
     var list = <PackageModel>[];
+<<<<<<< HEAD
     var snapshot = await FirebaseFirestore.instance
         .collection('packageBasket')
         .doc(Get.find<UserController>().user.id)
         .collection('packageBasket')
         .get();
+=======
+    var snapshot =
+        await FirebaseFirestore.instance.collection('packageBasket').doc(Get.find<UserController>().user.id)
+            .collection('packageBasket').get();
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
     for (var item in snapshot.docs) {
       var snapshot1 = await FirebaseFirestore.instance
           .collection('packages')
@@ -285,11 +296,17 @@ class UserService {
 
   Future<List<ProductModel>> getProductBasket() async {
     var list = <ProductModel>[];
+<<<<<<< HEAD
     var snapshot = await FirebaseFirestore.instance
         .collection('productBasket')
         .doc(Get.find<UserController>().user.id)
         .collection('productBasket')
         .get();
+=======
+    var snapshot =
+        await FirebaseFirestore.instance.collection('productBasket').doc(Get.find<UserController>().user.id)
+            .collection('productBasket').get();
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
     for (var item in snapshot.docs) {
       var snapshot1 = await FirebaseFirestore.instance
           .collection('products')
@@ -418,6 +435,7 @@ class UserService {
   }
 
   Future finishPay(List<Map<String, dynamic>> liste) async {
+<<<<<<< HEAD
     for (var element in liste) {
       await FirebaseFirestore.instance
           .collection('myPackages')
@@ -465,5 +483,21 @@ class UserService {
       ds.reference.delete();
     }
     return true;
+=======
+    var packageList = [];
+    liste.forEach((element) {
+      packageList.add(element['id']);
+    });
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(Get.find<UserController>().user.id)
+        .update({'packages': packageList,'packageBasket':0});
+    var snapshot = await FirebaseFirestore.instance
+        .collection('packageBasket')
+        .doc(Get.find<UserController>().user.id).collection('packageBasket').get();
+    for (DocumentSnapshot ds in snapshot.docs){
+      ds.reference.delete();
+    }
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
   }
 }

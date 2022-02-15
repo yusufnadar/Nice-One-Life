@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import 'package:auto_size_text/auto_size_text.dart';
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -30,11 +33,19 @@ class Products extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: Get.width * 0.07, vertical: Get.height * 0.01),
                 itemCount: _.products!.length,
+<<<<<<< HEAD
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 10,
                     childAspectRatio: 0.7),
+=======
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 0.67),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () => Get.to(() => ProductDetail(productId:_.products![index].id)),
                   child: Container(
@@ -56,7 +67,11 @@ class Products extends StatelessWidget {
       children: [
         CachedNetworkImage(imageUrl: product.photo!,width: Get.width*0.2,height: Get.height*0.12,fit: BoxFit.cover,),
         sizedBox2,
+<<<<<<< HEAD
         AutoSizeText(product.title!,textAlign: TextAlign.center,maxLines: 1,),
+=======
+        Text(product.title!,textAlign: TextAlign.center,),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
         sizedBox2,
         Prices(
           firstPrice: product.discountPrice!.toStringAsFixed(2),

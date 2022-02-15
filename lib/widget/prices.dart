@@ -18,7 +18,11 @@ class Prices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+<<<<<<< HEAD
       mainAxisAlignment: MainAxisAlignment.center,
+=======
+      mainAxisAlignment: MainAxisAlignment.start,
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       children: [
         Text(
           firstPrice!,
@@ -27,7 +31,11 @@ class Prices extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontSize: firstPriceSize),
         ),
+<<<<<<< HEAD
         const SizedBox(
+=======
+        SizedBox(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
           width: 15,
         ),
         Text(

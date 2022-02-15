@@ -52,8 +52,11 @@ dependencies:
   file_picker: ^4.3.0
   syncfusion_flutter_pdfviewer: ^19.4.40-beta
   flutter_keyboard_visibility:
+<<<<<<< HEAD
   firebase_dynamic_links:
   clipboard:
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
 dev_dependencies:
   flutter_test:

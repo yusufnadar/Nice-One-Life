@@ -14,6 +14,7 @@ import 'package:new_one_life/ui/drawer_pages/proteins.dart';
 import 'package:new_one_life/ui/home/home_page.dart';
 
 class DataController extends GetxController{
+<<<<<<< HEAD
   final DataService _dataService = DataService();
 
   final RxList<PostModel> _posts = <PostModel>[].obs;
@@ -48,6 +49,38 @@ class DataController extends GetxController{
   List<PackageModel>? get showMyPackages => _showMyPackages.value;
   set setShowMyPackages(List<PackageModel> package) => _showMyPackages.value = package;
 
+=======
+  DataService _dataService = DataService();
+
+  RxList<PostModel> _posts = <PostModel>[].obs;
+  List<PostModel>? get posts => _posts.value;
+  set setPosts(List<PostModel> post) => _posts.value = post;
+
+  RxList<UserModel> _doctors = <UserModel>[].obs;
+  List<UserModel>? get doctors => _doctors.value;
+  set setDoctors(List<UserModel> doctor) => _doctors.value = doctor;
+
+  RxList<ProteinValueModel> _proteinValues = <ProteinValueModel>[].obs;
+  List<ProteinValueModel>? get proteinValues => _proteinValues.value;
+  set setProteinValues(List<ProteinValueModel> proteinValues) => _proteinValues.value = proteinValues;
+
+  RxList<ProductModel> _products = <ProductModel>[].obs;
+  List<ProductModel>? get products => _products.value;
+  set setProducts(List<ProductModel> product) => _products.value = product;
+
+  Rx<ProductModel> _product = ProductModel().obs;
+  ProductModel get product => _product.value;
+  set setProduct(ProductModel product) => _product.value = product;
+
+  RxList<PackageModel> _packages = <PackageModel>[].obs;
+  List<PackageModel>? get packages => _packages.value;
+  set setPackages(List<PackageModel> package) => _packages.value = package;
+
+  RxList<String> _myPackages = <String>[].obs;
+  List<String>? get myPackages => _myPackages.value;
+  set setMyPackages(List<String> package) => _myPackages.value = package;
+
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
   RxList<GifModel> _gifs = <GifModel>[].obs;
   List<GifModel>? get gifs => _gifs.value;
   set setGifs(List<GifModel> gif) => _gifs.value = gif;
@@ -178,6 +211,7 @@ class DataController extends GetxController{
         setMyPackages = myPackages;
       }
     }catch(e){
+<<<<<<< HEAD
       //Get.snackbar('Error', e.toString());
     }
   }
@@ -189,6 +223,8 @@ class DataController extends GetxController{
         setShowMyPackages = paketler;
       }
     }catch(e){
+=======
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
       Get.snackbar('Error', e.toString());
     }
   }

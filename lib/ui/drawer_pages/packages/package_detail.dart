@@ -37,7 +37,11 @@ class PackageDetail extends StatelessWidget {
                 sizedBox2,
                 Text(
                   package!.title,
+<<<<<<< HEAD
                   style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+=======
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                 ),
                 sizedBox1,
                 Prices(
@@ -55,7 +59,11 @@ class PackageDetail extends StatelessWidget {
                       func.controller!.getGifs(package!.id);
                     },
                     builder: (_) => ListView.builder(
+<<<<<<< HEAD
                           physics: const NeverScrollableScrollPhysics(),
+=======
+                          physics: NeverScrollableScrollPhysics(),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                           shrinkWrap: true,
                           padding: EdgeInsets.only(bottom: Get.height * 0.08),
                           itemCount: _.gifs!.length,
@@ -68,6 +76,7 @@ class PackageDetail extends StatelessWidget {
               ],
             ),
           ),
+<<<<<<< HEAD
           Get.find<DataController>()
               .myPackages!
               .contains(package!.id) == false ? BuyOrAddBasket(
@@ -75,6 +84,13 @@ class PackageDetail extends StatelessWidget {
             id: package!.id,
             price:package!.discountPrice
           ) : Container(),
+=======
+          BuyOrAddBasket(
+            type: 'package',
+            id: package!.id,
+            price:package!.discountPrice
+          ),
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
         ],
       ),
     );

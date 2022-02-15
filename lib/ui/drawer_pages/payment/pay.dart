@@ -7,7 +7,12 @@ import 'package:new_one_life/controllers/user_controller.dart';
 import 'package:new_one_life/default/boxes.dart';
 import 'package:new_one_life/default/colors.dart';
 import 'package:new_one_life/models/address.dart';
+<<<<<<< HEAD
 import 'package:new_one_life/ui/home/home_page.dart';
+=======
+import 'package:new_one_life/models/package.dart';
+import 'package:new_one_life/ui/drawer_pages/payment/pay_completed.dart';
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 import 'package:new_one_life/widget/app_bar.dart';
 import 'package:new_one_life/widget/auth_button.dart';
 import 'package:http/http.dart' as http;
@@ -20,25 +25,41 @@ class PayController extends GetxController {
 
   set setCardNumber(String value) => _cardNumber.value = value;
 
+<<<<<<< HEAD
   final RxString _expiryDate = ''.obs;
+=======
+  RxString _expiryDate = ''.obs;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   String get expiryDate => _expiryDate.value;
 
   set setExpiryDate(String value) => _expiryDate.value = value;
 
+<<<<<<< HEAD
   final RxString _cardHolderName = ''.obs;
+=======
+  RxString _cardHolderName = ''.obs;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   String get cardHolderName => _cardHolderName.value;
 
   set setCardHolderName(String value) => _cardHolderName.value = value;
 
+<<<<<<< HEAD
   final RxString _cvvCode = ''.obs;
+=======
+  RxString _cvvCode = ''.obs;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   String get cvvCode => _cvvCode.value;
 
   set setCvvCode(String value) => _cvvCode.value = value;
 
+<<<<<<< HEAD
   final RxBool _isCvvFocused = false.obs;
+=======
+  RxBool _isCvvFocused = false.obs;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   bool get isCvvFocused => _isCvvFocused.value;
 
@@ -49,7 +70,11 @@ class Pay extends GetWidget<PayController> {
   final basketType;
   final price;
   final List<AddressModel>? address;
+<<<<<<< HEAD
   final List? items;
+=======
+  final List<PackageModel>? items;
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
 
   Pay({Key? key, this.basketType,this.price,this.address,this.items});
 
@@ -88,22 +113,38 @@ class Pay extends GetWidget<PayController> {
                   },
                   // Required
                   themeColor: Colors.red,
+<<<<<<< HEAD
                   cardNumberDecoration: const InputDecoration(
+=======
+                  cardNumberDecoration: InputDecoration(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                     border: OutlineInputBorder(),
                     labelText: 'Number',
                     hintText: 'XXXX XXXX XXXX XXXX',
                   ),
+<<<<<<< HEAD
                   expiryDateDecoration: const InputDecoration(
+=======
+                  expiryDateDecoration: InputDecoration(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                     border: OutlineInputBorder(),
                     labelText: 'Expired Date',
                     hintText: 'XX/XX',
                   ),
+<<<<<<< HEAD
                   cvvCodeDecoration: const InputDecoration(
+=======
+                  cvvCodeDecoration: InputDecoration(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                     border: OutlineInputBorder(),
                     labelText: 'CVV',
                     hintText: 'XXX',
                   ),
+<<<<<<< HEAD
                   cardHolderDecoration: const InputDecoration(
+=======
+                  cardHolderDecoration: InputDecoration(
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                     border: OutlineInputBorder(),
                     labelText: 'Card Holder',
                   ),
@@ -118,14 +159,23 @@ class Pay extends GetWidget<PayController> {
                   child: AuthButton(
                     text: 'Ödemeyi Tamamla',
                     onTap: () async {
+<<<<<<< HEAD
                       var uid = const Uuid().v4();
                       var liste = <Map<String,dynamic>>[];
+=======
+                      print(controller.cardNumber.replaceAll(" ",""));
+                      print('20${controller.expiryDate.substring(3,5)}');
+                      var uid = Uuid().v4();
+                      var liste = <Map<String,dynamic>>[];
+                      print(basketType);
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                       if(basketType == 'package'){
                         for(var item in items!){
                           liste.add({
                             "id": item.id,
                             "name": item.title,
                             "category1": "Kategori Yok",
+<<<<<<< HEAD
                             "price": item.discountPrice
                           });
                         }
@@ -137,6 +187,9 @@ class Pay extends GetWidget<PayController> {
                             "category1": "Kategori Yok",
                             "price": item.discountPrice,
                             "piece":item.piece
+=======
+                            "price": 120
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                           });
                         }
                       }
@@ -167,6 +220,7 @@ class Pay extends GetWidget<PayController> {
                       var response = await http.post(Uri.parse('http://10.0.2.2:8080/get'),body: json.encode(msg),headers: {'Content-Type':'application/json'});
                       if(response.statusCode == 200){
                         if(basketType == 'package'){
+<<<<<<< HEAD
                           var sonuc = await Get.find<UserController>().finishPay(liste);
                           if(sonuc){
                             Get.offAll(()=>HomePage());
@@ -180,6 +234,9 @@ class Pay extends GetWidget<PayController> {
                           }else{
                             Get.snackbar('Hata', 'Ödeme alındı fakat işlem gerçekleşmedi, lütfen bizi arayın');
                           }
+=======
+                          Get.find<UserController>().finishPay(liste);
+>>>>>>> f7da5cf2bd87b2af8afff7f59f53115c7e68e721
                         }
                         //Get.to(() => PayCompleted());
                       }
