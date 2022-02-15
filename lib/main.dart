@@ -79,6 +79,9 @@ class _TestPageState extends State<TestPage> {
   void initDynamicLinks() async {
     dynamicLinks.onLink.listen((dynamicLinkData) {
       print('dynamicLinkData $dynamicLinkData');
+
+      print('deepLink ${dynamicLinkData.link}');
+      print(dynamicLinkData.link.toString().split('/')[3]);
       //Navigator.pushNamed(context, dynamicLinkData.link.path);
     }).onError((error) {
       print('onLink error');
@@ -96,7 +99,7 @@ class _TestPageState extends State<TestPage> {
 
     final DynamicLinkParameters parameters = DynamicLinkParameters(
       uriPrefix: 'https://newonelife.page.link',
-      link: Uri.parse(Link),
+      link: Uri.parse(Link+'/selam'),
       androidParameters: const AndroidParameters(
         packageName: 'com.newOneLife.new_one_life',
         minimumVersion: 0,
@@ -175,11 +178,12 @@ class _TestPageState extends State<TestPage> {
                         onPressed: () async {
                           final PendingDynamicLinkData? data =
                           await dynamicLinks
-                              .getDynamicLink(Uri.parse(Link));
+                              .getDynamicLink(Uri.parse('https://newonelife.page.link/wtQ4'));
                           final Uri? deepLink = data?.link;
 
                           if (deepLink != null) {
                             // ignore: unawaited_futures
+                            print(deepLink);
                             print('deeplink 2.kısımda null değil');
                             //Navigator.pushNamed(context, deepLink.path);
                           }else{
